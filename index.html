@@ -1,0 +1,2510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peido Alemão — Spray Fedorento de Verdade</title>
+  <meta name="description" content="O spray de peido mais fedido do Brasil. Cheiro de carniça real. Diversão garantida nas pegadinhas. Por apenas R$ 15!" />
+  <meta property="og:title" content="Peido Alemão 💀 O Spray Mais Fedido do Brasil" />
+  <meta property="og:description" content="Tão fedido que quase causa vômito. Cumpre o prometido." />
+  <meta property="og:image" content="images/produto2.jpeg" />
+  <meta property="og:type" content="product" />
+
+  <style>
+    :root {
+      --laranja: #e65c00;
+      --laranja2: #ff7a1a;
+      --amarelo: #ffd600;
+      --vermelho: #c62828;
+      --preto: #0a0a0a;
+      --preto2: #141414;
+      --preto3: #1c1c1c;
+      --branco: #ffffff;
+      --cinza: #888;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+      background: var(--preto);
+      color: var(--branco);
+      overflow-x: hidden;
+    }
+
+    /* ───────── BARRA TOPO ───────── */
+    .barra-topo {
+      background: var(--vermelho);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: clamp(0.75rem, 3vw, 0.9rem);
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      animation: pisca 2s infinite;
+    }
+
+    @keyframes pisca {
+      0%, 100% { background: var(--vermelho); }
+      50% { background: #a31515; }
+    }
+
+    /* ───────── HERO COMPACTO ───────── */
+    .hero {
+      background: linear-gradient(170deg, #1a0800 0%, #2d1000 50%, #0a0a0a 100%);
+      text-align: center;
+      padding: 28px 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--preto2));
+      pointer-events: none;
+    }
+
+    .hero-linha-topo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-logo {
+      width: clamp(70px, 18vw, 100px);
+      filter: drop-shadow(0 4px 20px rgba(230,92,0,0.6));
+    }
+
+    .hero-titulo {
+      text-align: left;
+    }
+
+    .hero-titulo h1 {
+      font-size: clamp(1.8rem, 7vw, 3rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+    }
+
+    .hero-titulo h1 .linha1 { color: var(--branco); }
+    .hero-titulo h1 .linha2 { color: var(--amarelo); }
+
+    .hero-titulo .tag {
+      display: inline-block;
+      background: var(--vermelho);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+      font-weight: 700;
+      color: var(--laranja2);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    /* ───────── SECTION LABEL ───────── */
+    .section-label {
+      text-align: center;
+      padding: 36px 20px 16px;
+      background: var(--preto2);
+    }
+
+    .section-label h2 {
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .section-label h2 .em {
+      color: var(--laranja2);
+    }
+
+    .section-label p {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      color: var(--cinza);
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    /* ───────── VIDEOS — GRID PRINCIPAL ───────── */
+    .videos-section {
+      background: var(--preto2);
+      padding: 0 16px 32px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 600px) {
+      .videos-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .video-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 2px solid #222;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .video-card:hover {
+      border-color: var(--laranja);
+      transform: scale(1.02);
+    }
+
+    .video-card.destaque {
+      grid-column: span 2;
+    }
+
+    @media (min-width: 600px) {
+      .video-card.destaque { grid-column: span 1; }
+    }
+
+    .video-card video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      transition: background 0.2s;
+      pointer-events: none;
+    }
+
+    .video-card.playing .video-overlay { display: none; }
+
+    .play-btn {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .play-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--laranja);
+      margin-left: 3px;
+    }
+
+    .video-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 24px 10px 10px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.88));
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      pointer-events: none;
+    }
+
+    .video-info .handle {
+      color: var(--amarelo);
+      font-size: 0.7rem;
+    }
+
+    /* ───────── CTA PÓS-VÍDEOS ───────── */
+    .cta-bloco {
+      background: var(--preto2);
+      padding: 24px 20px 36px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .preco-bloco {
+      margin-bottom: 18px;
+    }
+
+    .preco-de {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      color: var(--cinza);
+      text-decoration: line-through;
+    }
+
+    .preco-por {
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+      font-weight: 900;
+      color: var(--amarelo);
+      line-height: 1;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+    }
+
+    .preco-frete {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #4caf50;
+      margin-top: 4px;
+    }
+
+    /* ───────── BOTÃO CTA ───────── */
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff8c00, var(--amarelo));
+      color: #000;
+      font-size: clamp(1rem, 4vw, 1.3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 18px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 6px 0 #a35800, 0 10px 30px rgba(255,140,0,0.4);
+      transition: transform 0.1s, box-shadow 0.1s;
+      width: 100%;
+      max-width: 440px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cta:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #a35800, 0 4px 12px rgba(255,140,0,0.3);
+    }
+
+    .btn-cta small {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--cinza);
+    }
+
+    .trust-badges span { display: flex; align-items: center; gap: 5px; }
+
+    /* ───────── ESTOQUE ───────── */
+    .estoque-bar {
+      background: #1a0800;
+      border: 1px solid #3d1400;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 0 auto 20px;
+      max-width: 440px;
+      font-size: 0.82rem;
+      font-family: Arial, sans-serif;
+    }
+
+    .estoque-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .estoque-label .qtd { color: var(--vermelho); }
+
+    .barra-prog {
+      height: 8px;
+      background: #333;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .barra-prog-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--vermelho), var(--laranja2));
+      border-radius: 50px;
+      width: 73%;
+      transition: width 1s ease;
+    }
+
+    /* ───────── PROVA SOCIAL NUMÉRICA ───────── */
+    .numeros {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: var(--preto3);
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .numero-item {
+      flex: 1;
+      text-align: center;
+      padding: 20px 10px;
+      border-right: 1px solid #222;
+    }
+
+    .numero-item:last-child { border-right: none; }
+
+    .numero-valor {
+      display: block;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--amarelo);
+    }
+
+    .numero-label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--cinza);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ───────── DEPOIMENTOS ───────── */
+    .depo-section {
+      background: var(--preto);
+      padding: 44px 20px;
+    }
+
+    .depo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 700px;
+      margin: 24px auto 0;
+    }
+
+    @media (min-width: 500px) {
+      .depo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .depo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .depo-card {
+      background: var(--preto3);
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .depo-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--laranja), var(--amarelo));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .depo-card.destaque-review {
+      border-color: var(--laranja);
+      background: linear-gradient(135deg, #1a0800, var(--preto3));
+    }
+
+    .depo-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .depo-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--laranja), var(--amarelo));
+    }
+
+    .depo-meta { flex: 1; min-width: 0; }
+
+    .depo-nome {
+      font-weight: 900;
+      font-size: 0.85rem;
+      color: var(--amarelo);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .depo-sub {
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--cinza);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .estrelas { color: #ffd600; letter-spacing: 1px; }
+
+    .depo-texto {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .depo-tag {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(230,92,0,0.12);
+      border: 1px solid rgba(230,92,0,0.3);
+      color: var(--laranja2);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+
+    .depo-reacao {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.75rem;
+      color: var(--cinza);
+      font-family: Arial, sans-serif;
+    }
+
+    /* ───────── BENEFÍCIOS ───────── */
+    .beneficios-section {
+      background: linear-gradient(180deg, var(--preto2) 0%, #1a0800 100%);
+      padding: 44px 20px;
+    }
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      max-width: 700px;
+      margin: 24px auto 0;
+    }
+
+    @media (min-width: 500px) {
+      .beneficios-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .beneficio {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(230,92,0,0.2);
+      border-radius: 12px;
+      padding: 18px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .bene-icone { font-size: 1.7rem; flex-shrink: 0; line-height: 1; }
+
+    .bene-h { font-size: 0.92rem; font-weight: 900; color: var(--amarelo); margin-bottom: 4px; }
+
+    .bene-p {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    /* ───────── PRODUTO DESTAQUE ───────── */
+    .produto-section {
+      background: var(--preto3);
+      padding: 44px 20px;
+      text-align: center;
+    }
+
+    .produto-section img {
+      width: min(300px, 85vw);
+      border-radius: 16px;
+      box-shadow: 0 16px 60px rgba(230,92,0,0.35);
+      margin-bottom: 28px;
+    }
+
+    /* ───────── FAQ ───────── */
+    .faq-section {
+      background: var(--preto);
+      padding: 44px 20px;
+    }
+
+    .faq-lista {
+      max-width: 660px;
+      margin: 24px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    details {
+      background: var(--preto3);
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 15px 18px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--amarelo);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    summary::after { content: '+'; font-size: 1.2rem; color: var(--laranja); flex-shrink: 0; }
+    details[open] summary::after { content: '−'; }
+
+    details p {
+      padding: 0 18px 15px;
+      font-family: Arial, sans-serif;
+      font-size: 0.87rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* ───────── CTA FINAL ───────── */
+    .cta-final {
+      background: linear-gradient(135deg, #2d1000 0%, #0a0a0a 100%);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-final h2 {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .cta-final h2 .em { color: var(--amarelo); }
+
+    .cta-final p {
+      font-family: Arial, sans-serif;
+      color: var(--cinza);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .garantia {
+      margin-top: 22px;
+      font-size: 0.78rem;
+      color: #555;
+      font-family: Arial, sans-serif;
+      line-height: 2;
+    }
+
+    /* ───────── FOOTER ───────── */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.75rem;
+      color: #333;
+      font-family: Arial, sans-serif;
+      line-height: 1.9;
+    }
+
+    /* ───────── KIT SELECTOR ───────── */
+    .kit-section {
+      background: var(--preto2);
+      padding: 32px 16px 28px;
+    }
+
+    .kit-titulo {
+      text-align: center;
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .kit-titulo span { color: var(--amarelo); }
+
+    .kit-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .kit-opcao {
+      border: 2px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 14px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--preto3);
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+
+    .kit-opcao:hover { border-color: var(--laranja); }
+
+    .kit-opcao.selecionado {
+      border-color: var(--amarelo);
+      background: linear-gradient(135deg, #1f1000, var(--preto3));
+    }
+
+    .kit-radio {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.15s;
+    }
+
+    .kit-opcao.selecionado .kit-radio {
+      border-color: var(--amarelo);
+    }
+
+    .kit-radio-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--amarelo);
+      display: none;
+    }
+
+    .kit-opcao.selecionado .kit-radio-dot { display: block; }
+
+    .kit-info { flex: 1; min-width: 0; }
+
+    .kit-nome {
+      font-size: 0.92rem;
+      font-weight: 900;
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .kit-badge-popular {
+      background: var(--vermelho);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+
+    .kit-badge-melhor {
+      background: #1b5e20;
+      color: #69f0ae;
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+
+    .kit-sub {
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--cinza);
+      margin-top: 2px;
+    }
+
+    .kit-preco {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .kit-preco-valor {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--amarelo);
+      line-height: 1;
+    }
+
+    .kit-preco-unitario {
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      color: var(--cinza);
+      margin-top: 2px;
+    }
+
+    .kit-preco-economia {
+      font-family: Arial, sans-serif;
+      font-size: 0.65rem;
+      color: #69f0ae;
+      font-weight: 700;
+    }
+
+    /* ───────── STICKY MOBILE ───────── */
+    .sticky-cta { display: none; }
+
+    @media (max-width: 680px) {
+      .sticky-cta {
+        display: block;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 998;
+        padding: 10px 16px 14px;
+        background: rgba(10,10,10,0.97);
+        border-top: 2px solid var(--laranja);
+        backdrop-filter: blur(10px);
+      }
+      .sticky-cta .btn-cta { max-width: 100%; padding: 14px 20px; font-size: 1rem; }
+      body { padding-bottom: 88px; }
+    }
+
+    /* ───────── CHECKOUT OVERLAY ───────── */
+    .ck-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .ck-overlay.aberto {
+      display: flex;
+    }
+
+    @media (min-width: 600px) {
+      .ck-overlay { align-items: center; }
+    }
+
+    .ck-panel {
+      background: #161616;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      max-width: 560px;
+      max-height: 94vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      animation: slideUp 0.28s cubic-bezier(.22,.68,0,1.2);
+      scrollbar-width: thin;
+      scrollbar-color: #333 transparent;
+    }
+
+    @media (min-width: 600px) {
+      .ck-panel { border-radius: 20px; max-height: 88vh; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .ck-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid #252525;
+      position: sticky;
+      top: 0;
+      background: #161616;
+      z-index: 1;
+    }
+
+    .ck-titulo {
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ck-fechar {
+      background: #2a2a2a;
+      border: none;
+      color: #fff;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .ck-fechar:hover { background: #3a3a3a; }
+
+    /* Indicador de passos */
+    .ck-steps {
+      display: flex;
+      gap: 0;
+      padding: 14px 20px;
+      border-bottom: 1px solid #222;
+    }
+
+    .ck-step-ind {
+      flex: 1;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      color: #555;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2a2a2a;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .ck-step-ind.ativo { color: var(--amarelo); border-color: var(--amarelo); }
+    .ck-step-ind.feito { color: #4caf50; border-color: #4caf50; }
+
+    /* Conteúdo das etapas */
+    .ck-body { padding: 20px; flex: 1; }
+
+    .ck-etapa { display: none; }
+    .ck-etapa.ativa { display: block; }
+
+    /* ── ETAPA 1: CARRINHO ── */
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .cart-item-img {
+      width: 60px; height: 60px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #111;
+      flex-shrink: 0;
+    }
+
+    .cart-item-info { flex: 1; min-width: 0; }
+
+    .cart-item-nome {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: var(--branco);
+    }
+
+    .cart-item-detalhe {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--cinza);
+      margin-top: 3px;
+    }
+
+    .cart-item-preco {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--amarelo);
+      flex-shrink: 0;
+    }
+
+    .cart-resumo {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    .cart-resumo-linha {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .cart-resumo-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--branco);
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+
+    .cart-resumo-total span:last-child { color: var(--amarelo); }
+
+    /* ── FORMULÁRIOS ── */
+    .form-grupo {
+      margin-bottom: 14px;
+    }
+
+    .form-grupo label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-grupo label .obrig { color: var(--vermelho); }
+
+    .form-input {
+      width: 100%;
+      background: #1e1e1e;
+      border: 1.5px solid #2e2e2e;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--branco);
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.15s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input:focus { border-color: var(--laranja); }
+    .form-input.erro { border-color: var(--vermelho); }
+    .form-input::placeholder { color: #444; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .form-row .form-grupo { margin-bottom: 0; }
+
+    select.form-input { cursor: pointer; }
+
+    option { background: #1e1e1e; }
+
+    .cep-wrapper {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-cep {
+      background: var(--laranja);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 900;
+      padding: 0 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .btn-cep:hover { background: var(--laranja2); }
+    .btn-cep:disabled { background: #333; cursor: default; }
+
+    .form-secao-titulo {
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: var(--laranja2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 20px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #252525;
+    }
+
+    .form-erro-msg {
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--vermelho);
+      margin-top: 4px;
+      display: none;
+    }
+
+    /* ── ETAPA 3: PAGAMENTO ── */
+    .pag-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .pag-tab {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #2e2e2e;
+      background: #1e1e1e;
+      color: #aaa;
+      cursor: pointer;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 900;
+      transition: all 0.15s;
+    }
+
+    .pag-tab.ativo {
+      border-color: var(--amarelo);
+      color: var(--amarelo);
+      background: rgba(255,214,0,0.06);
+    }
+
+    .pag-tab span { display: block; font-size: 1.3rem; margin-bottom: 3px; }
+
+    .pag-conteudo { display: none; }
+    .pag-conteudo.ativo { display: block; }
+
+    /* PIX */
+    .pix-box {
+      background: #0d1f0d;
+      border: 1.5px solid #2e5f2e;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .pix-valor {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #69f0ae;
+      margin-bottom: 4px;
+    }
+
+    .pix-descricao {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #4caf50;
+      margin-bottom: 16px;
+    }
+
+    .pix-qr-placeholder {
+      width: 160px; height: 160px;
+      background: #fff;
+      border-radius: 10px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .pix-chave-box {
+      background: #0a2a0a;
+      border: 1px solid #2e5f2e;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .pix-chave-valor {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #69f0ae;
+      word-break: break-all;
+      flex: 1;
+    }
+
+    .btn-copiar {
+      background: #2e5f2e;
+      border: none;
+      border-radius: 6px;
+      color: #69f0ae;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+
+    .btn-copiar:hover { background: #3a7a3a; }
+    .btn-copiar.copiado { background: #1b5e20; }
+
+    .pix-instrucoes {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: #4caf50;
+      text-align: left;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    .pix-instrucoes li { margin-bottom: 4px; }
+
+    /* Cartão */
+    .cartao-box {
+      background: #1e1e1e;
+      border: 1.5px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* Botões de navegação */
+    .ck-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #222;
+    }
+
+    .btn-voltar {
+      background: #222;
+      border: none;
+      border-radius: 8px;
+      color: #aaa;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 14px 20px;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+
+    .btn-voltar:hover { background: #2e2e2e; }
+
+    .btn-avancar {
+      flex: 1;
+      background: linear-gradient(135deg, #ff8c00, var(--amarelo));
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #a35800;
+      transition: transform 0.1s, box-shadow 0.1s;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-avancar:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #a35800;
+    }
+
+    /* Pedido confirmado */
+    .ck-sucesso {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .ck-sucesso .icone { font-size: 4rem; margin-bottom: 16px; }
+
+    .ck-sucesso h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #69f0ae;
+      margin-bottom: 8px;
+    }
+
+    .ck-sucesso p {
+      font-family: Arial, sans-serif;
+      color: #aaa;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ BARRA TOPO ══ -->
+  <div class="barra-topo">
+    🔥 ENTREGA EM TODO O BRASIL &nbsp;|&nbsp; PEDIDOS SAEM EM 24H &nbsp;|&nbsp; ESTOQUE LIMITADO
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-linha-topo">
+      <img src="images/produto1.png" alt="Peido Alemão" class="hero-logo" />
+      <div class="hero-titulo">
+        <h1>
+          <span class="linha1">Peido</span>
+          <span class="linha2">Alemão</span>
+        </h1>
+        <span class="tag">🔥 Viral no TikTok</span>
+      </div>
+    </div>
+    <p class="hero-sub">
+      💀 O cheiro mais fedido que você vai sentir na vida.<br>
+      Carniça, diarreia, podridão — em um único spray.
+    </p>
+  </section>
+
+  <!-- ══ VÍDEOS DOS INFLUENCERS (TOPO) ══ -->
+  <div class="section-label">
+    <h2>Quem usou <span class="em">não esqueceu</span> 🎥</h2>
+    <p>Veja as reações reais de quem testou</p>
+  </div>
+
+  <div class="videos-section">
+    <div class="videos-grid">
+
+      <!-- Vídeo 2 -->
+      <div class="video-card" id="vc1">
+        <video
+          src="videos/ssstik.io_@clipadas_wr_1782745945489.mp4"
+          playsinline
+          preload="none"
+          loop
+        ></video>
+        <div class="video-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div>💀 Quase vomitou</div>
+          <div class="handle">@clipadas_wr</div>
+        </div>
+      </div>
+
+      <!-- Vídeo 3 -->
+      <div class="video-card" id="vc2">
+        <video
+          src="videos/ssstik.io_@lucas.shop__1782745955171.mp4"
+          playsinline
+          preload="none"
+          loop
+        ></video>
+        <div class="video-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div>😂 Testando no irmão</div>
+          <div class="handle">@lucas.shop_</div>
+        </div>
+      </div>
+
+      <!-- Vídeo 4 -->
+      <div class="video-card" id="vc3">
+        <video
+          src="videos/ssstik.io_@hebertjhonatanferreira_1782745958746.mp4"
+          playsinline
+          preload="none"
+          loop
+        ></video>
+        <div class="video-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div>🤢 Fede MUITO</div>
+          <div class="handle">@hebertjhonatan</div>
+        </div>
+      </div>
+
+      <!-- Vídeo 5 -->
+      <div class="video-card" id="vc4">
+        <video
+          src="videos/ssstik.io_@lolaruivinha_1782745983449.mp4"
+          playsinline
+          preload="none"
+          loop
+        ></video>
+        <div class="video-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div>😵 Pegadinha épica</div>
+          <div class="handle">@lolaruivinha</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ KIT SELECTOR ══ -->
+  <div class="kit-section">
+    <div class="kit-titulo">
+      Escolha sua <span>quantidade</span> e economize:
+    </div>
+    <div class="kit-lista">
+
+      <div class="kit-opcao" id="kit-1" onclick="selecionarKit(1)">
+        <div class="kit-radio"><div class="kit-radio-dot"></div></div>
+        <div class="kit-info">
+          <div class="kit-nome">1 unidade</div>
+          <div class="kit-sub">R$ 11,99 por unidade • Entrega rápida</div>
+        </div>
+        <div class="kit-preco">
+          <div class="kit-preco-valor">R$ 11,99</div>
+          <div class="kit-preco-unitario">R$ 11,99/un</div>
+        </div>
+      </div>
+
+      <div class="kit-opcao selecionado" id="kit-2" onclick="selecionarKit(2)">
+        <div class="kit-radio"><div class="kit-radio-dot"></div></div>
+        <div class="kit-info">
+          <div class="kit-nome">
+            2 unidades
+            <span class="kit-badge-popular">🔥 Mais pedido</span>
+          </div>
+          <div class="kit-sub">R$ 8,50 por unidade • Entrega rápida</div>
+        </div>
+        <div class="kit-preco">
+          <div class="kit-preco-valor">R$ 16,99</div>
+          <div class="kit-preco-unitario">R$ 8,50/un</div>
+          <div class="kit-preco-economia">Economiza R$ 6,99</div>
+        </div>
+      </div>
+
+      <div class="kit-opcao" id="kit-3" onclick="selecionarKit(3)">
+        <div class="kit-radio"><div class="kit-radio-dot"></div></div>
+        <div class="kit-info">
+          <div class="kit-nome">
+            3 unidades
+            <span class="kit-badge-melhor">✅ Melhor custo</span>
+          </div>
+          <div class="kit-sub">R$ 7,33 por unidade • Entrega rápida</div>
+        </div>
+        <div class="kit-preco">
+          <div class="kit-preco-valor">R$ 21,99</div>
+          <div class="kit-preco-unitario">R$ 7,33/un</div>
+          <div class="kit-preco-economia">Economiza R$ 13,98</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ CTA PRINCIPAL ══ -->
+  <div class="cta-bloco">
+
+    <!-- Estoque -->
+    <div class="estoque-bar">
+      <div class="estoque-label">
+        <span>Estoque disponível hoje</span>
+        <span class="qtd" id="qtd-estoque">73% vendido</span>
+      </div>
+      <div class="barra-prog">
+        <div class="barra-prog-fill" id="barra-fill"></div>
+      </div>
+      <div style="font-family: Arial; font-size: 0.75rem; color: #c62828; margin-top: 8px; font-weight: 700;">
+        ⚡ Apenas <strong id="qtd-num">41</strong> unidades restantes
+      </div>
+    </div>
+
+    <!-- Preço dinâmico -->
+    <div class="preco-bloco">
+      <div class="preco-de" id="preco-de-label">De R$ 29,99</div>
+      <div class="preco-por" id="preco-por-label">16<span style="font-size:50%">,99</span></div>
+    </div>
+
+    <a href="#" onclick="abrirCarrinho();return false;" class="btn-cta" id="btn-cta-principal">
+      QUERO O MEU AGORA!
+      <small id="btn-sub-label">2 unidades selecionadas &bull; PIX / Cartão / Boleto</small>
+    </a>
+
+    <div class="trust-badges">
+      <span>🔒 Compra segura</span>
+      <span>📦 Entrega rastreada</span>
+      <span>💳 Cartão/PIX/Boleto</span>
+    </div>
+  </div>
+
+  <!-- ══ NÚMEROS ══ -->
+  <div class="numeros">
+    <div class="numero-item">
+      <span class="numero-valor">4.8★</span>
+      <span class="numero-label">Avaliação</span>
+    </div>
+    <div class="numero-item">
+      <span class="numero-valor">+2.400</span>
+      <span class="numero-label">Vendidos</span>
+    </div>
+    <div class="numero-item">
+      <span class="numero-valor">98%</span>
+      <span class="numero-label">Satisfeitos</span>
+    </div>
+  </div>
+
+  <!-- ══ DEPOIMENTOS (comentários reais TikTok Shop) ══ -->
+  <div class="depo-section">
+    <div style="text-align:center; max-width:700px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,5vw,2rem); font-weight:900; text-transform:uppercase; line-height:1.1;">
+        O que os <span style="color:var(--laranja2)">clientes</span> dizem
+      </h2>
+      <p style="font-family:Arial;font-size:0.88rem;color:var(--cinza);margin-top:6px;">Comentários reais · Compras verificadas · TikTok Shop</p>
+    </div>
+
+    <div class="depo-grid">
+
+      <div class="depo-card destaque-review">
+        <div class="depo-header">
+          <div class="depo-avatar">😵</div>
+          <div class="depo-meta">
+            <div class="depo-nome">b**</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 28/04/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"entrega oque promete. uma catinga de carniça, sempre quando eu uso pra brincar com o pessoal quase vomito com o cheiro!! mas é muito divertido ver a cara do pessoal reagindo"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card destaque-review">
+        <div class="depo-header">
+          <div class="depo-avatar">🤢</div>
+          <div class="depo-meta">
+            <div class="depo-nome">s**r</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Isso aí não é peido do alemão não, isso é <strong>diarreia do alemão</strong>, fedido pra caramba, tanto que n consigo nem usar pra brincar com as pessoas pq alguém pode passar mal com o cheiro igual eu passei, quase vomitei inalando isso, mas ele cumpre com o prometido"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😂</div>
+          <div class="depo-meta">
+            <div class="depo-nome">L**</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 17/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Bom só veio um pouco amassado mais o cheiro é muito fedorento pelo preço compensou"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">💀</div>
+          <div class="depo-meta">
+            <div class="depo-nome">C**)</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 23/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"quanto tempo pra sair? eu desgracei o banheiro da minha casa socorro pqp"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🤣</div>
+          <div class="depo-meta">
+            <div class="depo-nome">D**s</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 13/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Não recomendo kkkkkk Qualidade do produto: Fede demais"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🏃</div>
+          <div class="depo-meta">
+            <div class="depo-nome">E**a</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 07/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Muito bom, é fedido mesmo, ideal para acabar uma reunião"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😷</div>
+          <div class="depo-meta">
+            <div class="depo-nome">O**y</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 03/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Muito bom, fede esgoto"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😤</div>
+          <div class="depo-meta">
+            <div class="depo-nome">M**a **</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 05/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Fedido pra caramba, bom dms pra pegadinha"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">📦</div>
+          <div class="depo-meta">
+            <div class="depo-nome">G**n K**e</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 04/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Chegou bem embalado. Agora só aproveitar"</p>
+        <span class="depo-tag">✅ Verificado · 3 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">💩</div>
+          <div class="depo-meta">
+            <div class="depo-nome">d**o</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 10/02/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Mds muito fedido, cheiro de merda pra caralh0"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🚽</div>
+          <div class="depo-meta">
+            <div class="depo-nome">R**</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 27/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Bom, fedor de banheiro publico"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">💪</div>
+          <div class="depo-meta">
+            <div class="depo-nome">F**🅱️</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 23/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Negócio é poderoso mesmo kkkk"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😱</div>
+          <div class="depo-meta">
+            <div class="depo-nome">L**a 🌿</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 25/02/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Muito bom e é muito horrível"</p>
+        <span class="depo-tag">✅ Verificado · 3 UN</span>
+      </div>
+
+      <div class="depo-card destaque-review">
+        <div class="depo-header">
+          <div class="depo-avatar">🤯</div>
+          <div class="depo-meta">
+            <div class="depo-nome">P**o R**5</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 05/02/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Putamerda fudido pra caramba kkkkkkkkkkk"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😂</div>
+          <div class="depo-meta">
+            <div class="depo-nome">L**s</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 17/01/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Kkk muito podre, como diz no anúncio"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🎉</div>
+          <div class="depo-meta">
+            <div class="depo-nome">A**o</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 10/06/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Top já riiii horrores kkk"</p>
+        <span class="depo-tag">✅ Verificado · 3 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😵</div>
+          <div class="depo-meta">
+            <div class="depo-nome">j**愛</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"bicho fede feito uma miséria"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😤</div>
+          <div class="depo-meta">
+            <div class="depo-nome">P**o s**o</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 07/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Muito fedorento kkkkk"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😂</div>
+          <div class="depo-meta">
+            <div class="depo-nome">V**d</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 05/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Muito bom para trola"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🤢</div>
+          <div class="depo-meta">
+            <div class="depo-nome">p**1</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 05/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"O trem fede mesmo kkkkk"</p>
+        <span class="depo-tag">✅ Verificado · 2 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">💀</div>
+          <div class="depo-meta">
+            <div class="depo-nome">E**8</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 24/02/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Realmente é muito fedido"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😱</div>
+          <div class="depo-meta">
+            <div class="depo-nome">H**a P**e</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 08/02/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Pensa num treco fedido"</p>
+        <span class="depo-tag">✅ Verificado · 3 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🤦</div>
+          <div class="depo-meta">
+            <div class="depo-nome">𝔐**🗨️</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"MN me arrependi fede muito"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">✅</div>
+          <div class="depo-meta">
+            <div class="depo-nome">T**o</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 30/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"É forte e fedorento mesmo! Não aconselhável para os fracos. O pedido foi recebido de maneira correta e certa."</p>
+        <span class="depo-tag">✅ Verificado · 2 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🎯</div>
+          <div class="depo-meta">
+            <div class="depo-nome">Z**a</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 29/05/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Divertido deixa um cheiro horrível Muito divertido"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">😬</div>
+          <div class="depo-meta">
+            <div class="depo-nome">L**s</div>
+            <div class="depo-sub"><span class="estrelas">★★★★★</span><span>Compra verificada · 14/05/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Só tem um porém, o produto é muito fedido kkkkk"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+      <!-- 1 estrela — aumenta credibilidade -->
+      <div class="depo-card" style="border-left-color:#555;">
+        <div class="depo-header">
+          <div class="depo-avatar">😰</div>
+          <div class="depo-meta">
+            <div class="depo-nome">l**a</div>
+            <div class="depo-sub"><span style="color:#c62828;">★</span><span style="color:#333;">★★★★</span> &nbsp;<span>Compra verificada · 31/03/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Meu filho que comprou cheiro horrível"</p>
+        <span class="depo-tag" style="border-color:#555;color:#888;">1 estrela · 1 UN</span>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-header">
+          <div class="depo-avatar">🙂</div>
+          <div class="depo-meta">
+            <div class="depo-nome">M**s D**i</div>
+            <div class="depo-sub"><span class="estrelas" style="color:#ffd600;">★★★★</span><span style="color:#333;">★</span> &nbsp;<span>Compra verificada · 21/04/2026</span></div>
+          </div>
+        </div>
+        <p class="depo-texto">"Passou um pouco do prazo de entrega e veio sem rótulo no mais tudo certo"</p>
+        <span class="depo-tag">✅ Verificado · 1 UN</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ CTA MEIO ══ -->
+  <div class="cta-bloco" style="border-top: 1px solid #222;">
+    <a href="#" onclick="abrirCarrinho();return false;" class="btn-cta">
+      PEDIR AGORA — SÓ R$ 11,99
+      <small>PIX / Cartão / Boleto</small>
+    </a>
+    <div class="trust-badges" style="margin-top:12px;">
+      <span>🔒 Entrega rastreada</span>
+      <span>📦 Embalagem discreta</span>
+    </div>
+  </div>
+
+  <!-- ══ BENEFÍCIOS ══ -->
+  <div class="beneficios-section">
+    <div style="text-align:center; max-width:700px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,5vw,2rem); font-weight:900; text-transform:uppercase; line-height:1.1;">
+        Por que o Peido Alemão é <span style="color:var(--laranja2)">diferente?</span>
+      </h2>
+    </div>
+    <div class="beneficios-grid">
+      <div class="beneficio">
+        <div class="bene-icone">💀</div>
+        <div>
+          <div class="bene-h">Cheiro absurdamente real</div>
+          <p class="bene-p">Formulado pra fedorento de verdade. Clientes descrevem como "carniça" e "quase diarreia". Não é brincadeira.</p>
+        </div>
+      </div>
+      <div class="beneficio">
+        <div class="bene-icone">🎯</div>
+        <div>
+          <div class="bene-h">Um jato basta</div>
+          <p class="bene-p">Frasco compacto e discreto. Um toque e o ambiente fica insustentável em segundos.</p>
+        </div>
+      </div>
+      <div class="beneficio">
+        <div class="bene-icone">⏱️</div>
+        <div>
+          <div class="bene-h">Dura até 30 minutos</div>
+          <p class="bene-p">Em ambiente fechado, o efeito persiste de 10 a 30 minutos. Fuga garantida.</p>
+        </div>
+      </div>
+      <div class="beneficio">
+        <div class="bene-icone">📦</div>
+        <div>
+          <div class="bene-h">Embalagem discreta</div>
+          <p class="bene-p">Chegou sem suspeitas. Perfeito pra dar de presente surpresa.</p>
+        </div>
+      </div>
+      <div class="beneficio">
+        <div class="bene-icone">🚀</div>
+        <div>
+          <div class="bene-h">Entrega em todo o Brasil</div>
+          <p class="bene-p">Prazo médio 3 a 7 dias úteis. Rastreado, rápido, sem enrolação.</p>
+        </div>
+      </div>
+      <div class="beneficio">
+        <div class="bene-icone">💰</div>
+        <div>
+          <div class="bene-h">A partir de R$ 11,99</div>
+          <p class="bene-p">O melhor custo-benefício em diversão que existe. Quanto mais você leva, mais barato fica por unidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PRODUTO ══ -->
+  <div class="produto-section">
+    <img src="images/produto2.jpeg" alt="Spray de Peido Peido Alemão Fedorento" />
+    <a href="#" onclick="abrirCarrinho();return false;" class="btn-cta" style="display:inline-block; max-width:440px;">
+      GARANTIR MEU PEIDO ALEMÃO
+      <small>R$ 11,99 &bull; PIX / Cartão / Boleto</small>
+    </a>
+  </div>
+
+  <!-- ══ FAQ ══ -->
+  <div class="faq-section">
+    <div style="text-align:center; max-width:660px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,5vw,2rem); font-weight:900; text-transform:uppercase; line-height:1.1;">
+        Perguntas <span style="color:var(--laranja2)">frequentes</span>
+      </h2>
+    </div>
+    <div class="faq-lista">
+      <details>
+        <summary>É realmente fedido ou é exagero?</summary>
+        <p>É FEDIDO de verdade. Clientes descrevem como "cheiro de carniça", "diarreia de alemão" e "quase vomitei". Produto de verdade, cheiro de verdade.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo o cheiro dura?</summary>
+        <p>De 10 a 30 minutos dependendo da ventilação. Em espaços fechados dura mais. Use com responsabilidade!</p>
+      </details>
+      <details>
+        <summary>Qual o tamanho do frasco?</summary>
+        <p>30ml com spray de alta fixação. Rende muitas pegadinhas — um jatinho já destrói o ambiente.</p>
+      </details>
+      <details>
+        <summary>Faz mal à saúde?</summary>
+        <p>Não é tóxico, mas evite inalação direta excessiva. Não recomendamos uso perto de crianças pequenas, idosos ou pessoas com problemas respiratórios.</p>
+      </details>
+      <details>
+        <summary>Como chega a embalagem?</summary>
+        <p>Embalagem totalmente discreta — sem identificação do produto. A surpresa chega intacta.</p>
+      </details>
+      <details>
+        <summary>Quais formas de pagamento são aceitas?</summary>
+        <p>Aceitamos PIX, cartão de crédito/débito e boleto bancário. O pagamento é realizado diretamente no site, de forma segura, antes do envio do pedido.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo demora pra chegar?</summary>
+        <p>Média de 3 a 7 dias úteis após confirmação. Rastreamento disponível via código no e-mail.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section class="cta-final">
+    <h2>
+      Chega de pegadinha<br>
+      <span class="em">que não funciona.</span>
+    </h2>
+    <p>Use o spray que quase causa vômito de verdade. Garantia total de diversão (ou fuga).</p>
+
+    <a href="#" onclick="abrirCarrinho();return false;" class="btn-cta" style="display:inline-block; max-width:440px;">
+      QUERO O MEU — SÓ R$ 11,99
+      <small>PIX / Cartão / Boleto</small>
+    </a>
+
+    <p class="garantia">
+      🔒 Compra 100% segura &nbsp;|&nbsp; 📦 Entrega rastreada<br>
+      😂 Diversão garantida — é fedido de verdade
+    </p>
+  </section>
+
+  <footer>
+    <p>Peido Alemão — Spray Fedorento Original</p>
+    <p>Produto para fins de entretenimento e pegadinhas. Use com responsabilidade.</p>
+    <p style="margin-top:6px;">© 2026 Peido Alemão. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- ══ STICKY MOBILE ══ -->
+  <div class="sticky-cta">
+    <a href="#" onclick="abrirCarrinho();return false;" class="btn-cta">
+      PEDIR AGORA — R$ 11,99
+      <small>Entrega rápida &bull; Entrega rastreada</small>
+    </a>
+  </div>
+
+  <!-- ══════════════════════════════
+       OVERLAY DE CHECKOUT
+  ══════════════════════════════ -->
+  <div class="ck-overlay" id="ck-overlay">
+    <div class="ck-panel">
+
+      <!-- HEADER -->
+      <div class="ck-header">
+        <span class="ck-titulo" id="ck-titulo-label">Seu carrinho</span>
+        <button class="ck-fechar" onclick="fecharCarrinho()">✕</button>
+      </div>
+
+      <!-- INDICADOR DE PASSOS -->
+      <div class="ck-steps">
+        <div class="ck-step-ind ativo" id="ck-s1">Carrinho</div>
+        <div class="ck-step-ind"       id="ck-s2">Entrega</div>
+        <div class="ck-step-ind"       id="ck-s3">Pagamento</div>
+      </div>
+
+      <div class="ck-body">
+
+        <!-- ── ETAPA 1: CARRINHO ── -->
+        <div class="ck-etapa ativa" id="ck-etapa1">
+          <div class="cart-item">
+            <img src="images/produto1.png" class="cart-item-img" alt="Peido Alemão" />
+            <div class="cart-item-info">
+              <div class="cart-item-nome" id="cart-item-nome">Peido Alemão — 2 unidades</div>
+              <div class="cart-item-detalhe">Spray Fedorento 30ml</div>
+            </div>
+            <div class="cart-item-preco" id="cart-item-preco">R$ 16,99</div>
+          </div>
+
+          <div class="cart-resumo">
+            <div class="cart-resumo-linha">
+              <span>Subtotal</span>
+              <span id="cart-sub">R$ 16,99</span>
+            </div>
+            <div class="cart-resumo-linha">
+              <span>Frete</span>
+              <span id="cart-frete" style="color:#aaa;">R$ 7,00</span>
+            </div>
+            <div class="cart-resumo-total">
+              <span>Total</span>
+              <span id="cart-total">R$ 16,99</span>
+            </div>
+          </div>
+
+          <div class="ck-nav" style="border-top:none; padding-top:0;">
+            <button class="btn-avancar" onclick="irParaEtapa(2); document.getElementById('ck-titulo-label').textContent='Dados de entrega';">
+              CONTINUAR &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ── ETAPA 2: DADOS + ENDEREÇO ── -->
+        <div class="ck-etapa" id="ck-etapa2">
+
+          <div class="form-secao-titulo">Seus dados</div>
+
+          <div class="form-grupo">
+            <label>Nome completo <span class="obrig">*</span></label>
+            <input id="f-nome" type="text" class="form-input" placeholder="João da Silva" autocomplete="name" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-grupo">
+              <label>WhatsApp <span class="obrig">*</span></label>
+              <input id="f-tel" type="tel" class="form-input" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="numeric" />
+            </div>
+            <div class="form-grupo">
+              <label>E-mail <span class="obrig">*</span></label>
+              <input id="f-email" type="email" class="form-input" placeholder="seu@email.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-secao-titulo">Endereço de entrega</div>
+
+          <div class="form-grupo">
+            <label>CEP <span class="obrig">*</span></label>
+            <div class="cep-wrapper">
+              <input id="f-cep" type="text" class="form-input" placeholder="00000-000" maxlength="9" inputmode="numeric" />
+              <button class="btn-cep" id="btn-cep" onclick="buscarCep()">Buscar</button>
+            </div>
+          </div>
+
+          <div class="form-grupo">
+            <label>Rua / Logradouro <span class="obrig">*</span></label>
+            <input id="f-rua" type="text" class="form-input" placeholder="Rua das Flores" autocomplete="address-line1" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-grupo">
+              <label>Número <span class="obrig">*</span></label>
+              <input id="f-num" type="text" class="form-input" placeholder="123" inputmode="numeric" />
+            </div>
+            <div class="form-grupo">
+              <label>Complemento</label>
+              <input id="f-comp" type="text" class="form-input" placeholder="Apto 4B" />
+            </div>
+          </div>
+
+          <div class="form-grupo">
+            <label>Bairro <span class="obrig">*</span></label>
+            <input id="f-bairro" type="text" class="form-input" placeholder="Centro" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-grupo">
+              <label>Cidade <span class="obrig">*</span></label>
+              <input id="f-cidade" type="text" class="form-input" placeholder="São Paulo" autocomplete="address-level2" />
+            </div>
+            <div class="form-grupo">
+              <label>Estado <span class="obrig">*</span></label>
+              <select id="f-estado" class="form-input">
+                <option value="">UF</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ck-nav">
+            <button class="btn-voltar" onclick="irParaEtapa(1); document.getElementById('ck-titulo-label').textContent='Seu carrinho';">&larr; Voltar</button>
+            <button class="btn-avancar" onclick="avancarEtapa2(); document.getElementById('ck-titulo-label').textContent='Pagamento';">
+              IR PARA PAGAMENTO &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ── ETAPA 3: PAGAMENTO ── -->
+        <div class="ck-etapa" id="ck-etapa3">
+
+          <div class="pag-tabs">
+            <div class="pag-tab ativo" id="pag-tab-pix" onclick="selecionarPag('pix')">
+              <span>⚡</span>PIX
+            </div>
+            <div class="pag-tab" id="pag-tab-cartao" onclick="selecionarPag('cartao')">
+              <span>💳</span>Cartão
+            </div>
+          </div>
+
+          <!-- PIX -->
+          <div class="pag-conteudo ativo" id="pag-pix">
+            <div class="pix-box">
+              <div class="pix-valor" id="pix-valor">R$ 16,99</div>
+              <div class="pix-descricao">Pague via PIX — aprovação imediata</div>
+              <div class="pix-qr-placeholder">
+                [QR Code PIX<br>gerado após<br>confirmar pedido]
+              </div>
+              <div class="pix-chave-box">
+                <span class="pix-chave-valor" id="pix-chave">SEU_PIX_AQUI</span>
+                <button class="btn-copiar" id="btn-copiar" onclick="copiarPix()">Copiar</button>
+              </div>
+              <ul class="pix-instrucoes">
+                <li>1. Copie a chave PIX acima</li>
+                <li>2. Abra o app do seu banco</li>
+                <li>3. Pague o valor exato</li>
+                <li>4. Envie o comprovante via WhatsApp</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CARTÃO -->
+          <div class="pag-conteudo" id="pag-cartao">
+            <div class="cartao-box">
+              <div class="form-grupo">
+                <label>Número do cartão <span class="obrig">*</span></label>
+                <input type="text" class="form-input" placeholder="0000 0000 0000 0000" inputmode="numeric" maxlength="19" />
+              </div>
+              <div class="form-grupo">
+                <label>Nome no cartão <span class="obrig">*</span></label>
+                <input type="text" class="form-input" placeholder="JOAO DA SILVA" />
+              </div>
+              <div class="card-row">
+                <div class="form-grupo">
+                  <label>Validade <span class="obrig">*</span></label>
+                  <input type="text" class="form-input" placeholder="MM/AA" maxlength="5" inputmode="numeric" />
+                </div>
+                <div class="form-grupo">
+                  <label>CVV <span class="obrig">*</span></label>
+                  <input type="text" class="form-input" placeholder="123" maxlength="4" inputmode="numeric" />
+                </div>
+              </div>
+              <div class="form-grupo">
+                <label>Parcelamento</label>
+                <select class="form-input">
+                  <option>1x de R$ 16,99 sem juros (2 un)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="ck-nav">
+            <button class="btn-voltar" onclick="irParaEtapa(2); document.getElementById('ck-titulo-label').textContent='Dados de entrega';">&larr; Voltar</button>
+            <button class="btn-avancar" onclick="finalizarPedido()">
+              CONFIRMAR PEDIDO ✓
+            </button>
+          </div>
+        </div>
+
+        <!-- ── ETAPA 4: CONFIRMADO ── -->
+        <div class="ck-etapa" id="ck-etapa4">
+          <div class="ck-sucesso">
+            <div class="icone">✅</div>
+            <h3>Pedido recebido!</h3>
+            <p id="sucesso-msg-pix" style="display:none;">
+              Agora pague via PIX para confirmar o envio.<br><br>
+              <strong style="color:#69f0ae; font-size:1.1rem;" id="sucesso-pix-valor"></strong><br><br>
+              Chave PIX:<br>
+              <strong style="color:#69f0ae; font-family:monospace;" id="sucesso-pix-chave"></strong><br><br>
+              Após o pagamento, envie o comprovante no WhatsApp para confirmarmos o envio.
+            </p>
+            <p id="sucesso-msg-cartao" style="display:none;">
+              Seu pedido foi recebido e está sendo processado.<br>
+              Você receberá um e-mail de confirmação em breve.
+            </p>
+            <br>
+            <a href="#" onclick="fecharCarrinho();return false;" class="btn-cta" style="display:inline-block; max-width:320px; margin-top:16px;">
+              Fechar
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /ck-body -->
+    </div><!-- /ck-panel -->
+  </div><!-- /ck-overlay -->
+
+  <script>
+    // ── Kit selector
+    // ════════════════════════════════
+    // CONFIGURAÇÃO — edite aqui
+    // ════════════════════════════════
+    var CONFIG = {
+      PIX_CHAVE:    'SEU_PIX_AQUI',         // CPF, e-mail, telefone ou chave aleatória
+      PIX_NOME:     'Peido Alemão',
+      WEBHOOK_URL:  '',                       // URL do webhook para salvar pedidos (opcional)
+      WHATSAPP:     '55SEUNUMERO'            // Número com DDI (ex: 5511999999999)
+    };
+
+    // ════════════════════════════════
+    // KITS
+    // ════════════════════════════════
+    var KITS = {
+      1: { qtd: 1, preco: 11.99,  precoCurto: '11<span style="font-size:50%">,99</span>', de: 'De R$ 19,99', label: '1 unidade' },
+      2: { qtd: 2, preco: 16.99,  precoCurto: '16<span style="font-size:50%">,99</span>', de: 'De R$ 29,99', label: '2 unidades' },
+      3: { qtd: 3, preco: 21.99,  precoCurto: '21<span style="font-size:50%">,99</span>', de: 'De R$ 39,99', label: '3 unidades' }
+    };
+
+    var kitAtual = 2;
+    var etapaAtual = 1;
+
+    function selecionarKit(n) {
+      kitAtual = n;
+      document.querySelectorAll('.kit-opcao').forEach(function(el) { el.classList.remove('selecionado'); });
+      document.getElementById('kit-' + n).classList.add('selecionado');
+      var k = KITS[n];
+      var precoEl = document.getElementById('preco-por-label');
+      var deEl    = document.getElementById('preco-de-label');
+      var subEl   = document.getElementById('btn-sub-label');
+      if (precoEl) precoEl.innerHTML = k.precoCurto;
+      if (deEl)    deEl.textContent  = k.de;
+      if (subEl)   subEl.innerHTML   = k.label + ' selecionadas &bull; PIX / Cartão / Boleto';
+    }
+
+    // ════════════════════════════════
+    // CARRINHO / CHECKOUT
+    // ════════════════════════════════
+    function abrirCarrinho() {
+      etapaAtual = 1;
+      atualizarCarrinho();
+      renderSteps();
+      document.getElementById('ck-overlay').classList.add('aberto');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharCarrinho() {
+      document.getElementById('ck-overlay').classList.remove('aberto');
+      document.body.style.overflow = '';
+    }
+
+    var FRETE = 7.00;
+
+    function fmt(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
+
+    function atualizarCarrinho() {
+      var k = KITS[kitAtual];
+      var total = k.preco + FRETE;
+      document.getElementById('cart-item-nome').textContent  = 'Peido Alemão — ' + k.label;
+      document.getElementById('cart-item-preco').textContent = fmt(k.preco);
+      document.getElementById('cart-sub').textContent        = fmt(k.preco);
+      document.getElementById('cart-frete').textContent      = fmt(FRETE);
+      document.getElementById('cart-total').textContent      = fmt(total);
+    }
+
+    function renderSteps() {
+      ['ck-s1','ck-s2','ck-s3'].forEach(function(id, i) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.classList.remove('ativo','feito');
+        if (i + 1 === etapaAtual) el.classList.add('ativo');
+        if (i + 1 < etapaAtual)   el.classList.add('feito');
+      });
+      ['ck-etapa1','ck-etapa2','ck-etapa3','ck-etapa4'].forEach(function(id, i) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.classList.toggle('ativa', i + 1 === etapaAtual);
+      });
+    }
+
+    function irParaEtapa(n) {
+      etapaAtual = n;
+      renderSteps();
+      document.querySelector('.ck-panel').scrollTop = 0;
+    }
+
+    // ── Validação ──
+    function validarEtapa2() {
+      var ok = true;
+      var campos = ['f-nome','f-tel','f-email','f-cep','f-rua','f-num','f-bairro','f-cidade','f-estado'];
+      campos.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var vazio = el.value.trim() === '';
+        el.classList.toggle('erro', vazio);
+        if (vazio) ok = false;
+      });
+      return ok;
+    }
+
+    function avancarEtapa2() {
+      if (!validarEtapa2()) {
+        document.querySelector('.ck-panel').scrollTop = 0;
+        return;
+      }
+      irParaEtapa(3);
+      renderPagamento();
+    }
+
+    // ── CEP via ViaCEP ──
+    function buscarCep() {
+      var cep = document.getElementById('f-cep').value.replace(/\D/g,'');
+      if (cep.length !== 8) return;
+      var btn = document.getElementById('btn-cep');
+      btn.textContent = '...';
+      btn.disabled = true;
+      fetch('https://viacep.com.br/ws/' + cep + '/json/')
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (d.erro) { alert('CEP não encontrado.'); return; }
+          document.getElementById('f-rua').value    = d.logradouro || '';
+          document.getElementById('f-bairro').value = d.bairro || '';
+          document.getElementById('f-cidade').value = d.localidade || '';
+          document.getElementById('f-estado').value = d.uf || '';
+          document.getElementById('f-num').focus();
+        })
+        .catch(function(){ alert('Erro ao buscar CEP. Preencha manualmente.'); })
+        .finally(function(){ btn.textContent = 'Buscar'; btn.disabled = false; });
+    }
+
+    // ── Pagamento ──
+    var pagAtual = 'pix';
+
+    function selecionarPag(tipo) {
+      pagAtual = tipo;
+      ['pix','cartao'].forEach(function(t) {
+        document.getElementById('pag-tab-' + t).classList.toggle('ativo', t === tipo);
+        document.getElementById('pag-' + t).classList.toggle('ativo', t === tipo);
+      });
+    }
+
+    function renderPagamento() {
+      var k = KITS[kitAtual];
+      var total = k.preco + FRETE;
+      document.getElementById('pix-valor').textContent = fmt(total);
+      document.getElementById('pix-chave').textContent = CONFIG.PIX_CHAVE;
+    }
+
+    function copiarPix() {
+      var chave = CONFIG.PIX_CHAVE;
+      var btn = document.getElementById('btn-copiar');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(chave).then(function() {
+          btn.textContent = 'Copiado!';
+          btn.classList.add('copiado');
+          setTimeout(function(){ btn.textContent = 'Copiar'; btn.classList.remove('copiado'); }, 2000);
+        });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = chave;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.textContent = 'Copiado!';
+        setTimeout(function(){ btn.textContent = 'Copiar'; }, 2000);
+      }
+    }
+
+    // ── Finalizar pedido ──
+    function finalizarPedido() {
+      var k = KITS[kitAtual];
+      var pedido = {
+        kit:        k.label,
+        preco:      k.preco,
+        nome:       document.getElementById('f-nome').value,
+        telefone:   document.getElementById('f-tel').value,
+        email:      document.getElementById('f-email').value,
+        cep:        document.getElementById('f-cep').value,
+        rua:        document.getElementById('f-rua').value,
+        numero:     document.getElementById('f-num').value,
+        complemento:document.getElementById('f-comp').value,
+        bairro:     document.getElementById('f-bairro').value,
+        cidade:     document.getElementById('f-cidade').value,
+        estado:     document.getElementById('f-estado').value,
+        pagamento:  pagAtual,
+        data:       new Date().toISOString()
+      };
+
+      if (CONFIG.WEBHOOK_URL) {
+        fetch(CONFIG.WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(pedido)
+        }).catch(function(){});
+      }
+
+      var k2 = KITS[kitAtual];
+      irParaEtapa(4);
+      document.getElementById('ck-titulo-label').textContent = 'Pedido confirmado';
+      if (pagAtual === 'pix') {
+        document.getElementById('sucesso-msg-pix').style.display = 'block';
+        document.getElementById('sucesso-msg-cartao').style.display = 'none';
+        document.getElementById('sucesso-pix-valor').textContent = fmt(k2.preco + FRETE);
+        document.getElementById('sucesso-pix-chave').textContent = CONFIG.PIX_CHAVE;
+      } else {
+        document.getElementById('sucesso-msg-pix').style.display = 'none';
+        document.getElementById('sucesso-msg-cartao').style.display = 'block';
+      }
+    }
+
+    // ════════════════════════════════
+    // VÍDEOS
+    // ════════════════════════════════
+    document.querySelectorAll('.video-card').forEach(function(card) {
+      var video = card.querySelector('video');
+      card.addEventListener('click', function() {
+        if (video.paused) {
+          document.querySelectorAll('.video-card video').forEach(function(v) { if (v !== video) v.pause(); });
+          document.querySelectorAll('.video-card').forEach(function(c) { c.classList.remove('playing'); });
+          video.play();
+          card.classList.add('playing');
+        } else {
+          video.pause();
+          card.classList.remove('playing');
+        }
+      });
+      video.addEventListener('pause', function() { card.classList.remove('playing'); });
+      video.addEventListener('play',  function() { card.classList.add('playing'); });
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.preload = 'metadata'; obs.unobserve(e.target); }
+        });
+      }, { rootMargin: '300px' });
+      document.querySelectorAll('video[preload="none"]').forEach(function(v) { obs.observe(v); });
+    }
+
+    // ════════════════════════════════
+    // ESTOQUE CAINDO
+    // ════════════════════════════════
+    (function() {
+      var numEl = document.getElementById('qtd-num');
+      var barEl = document.getElementById('barra-fill');
+      var qtdEl = document.getElementById('qtd-estoque');
+      if (!numEl) return;
+      var n = parseInt(numEl.textContent);
+      setInterval(function() {
+        if (n > 5 && Math.random() < 0.4) {
+          n--;
+          numEl.textContent = n;
+          var pct = Math.round(100 - (n / 150) * 100);
+          if (barEl) barEl.style.width = pct + '%';
+          if (qtdEl) qtdEl.textContent = pct + '% vendido';
+        }
+      }, 30000);
+    })();
+
+    // Fechar overlay clicando fora
+    document.getElementById('ck-overlay').addEventListener('click', function(e) {
+      if (e.target === this) fecharCarrinho();
+    });
+
+    // Máscara de telefone
+    document.getElementById('f-tel').addEventListener('input', function() {
+      var v = this.value.replace(/\D/g,'').slice(0,11);
+      if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
+      else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
+      this.value = v;
+    });
+
+    // Máscara de CEP
+    document.getElementById('f-cep').addEventListener('input', function() {
+      var v = this.value.replace(/\D/g,'').slice(0,8);
+      if (v.length > 5) v = v.replace(/^(\d{5})(\d*)$/,'$1-$2');
+      this.value = v;
+    });
+  </script>
+
+</body>
+</html>
