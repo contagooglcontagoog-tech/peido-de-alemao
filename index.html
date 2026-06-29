@@ -2133,17 +2133,8 @@
         <!-- ── ETAPA 3: PAGAMENTO ── -->
         <div class="ck-etapa" id="ck-etapa3">
 
-          <div class="pag-tabs">
-            <div class="pag-tab ativo" id="pag-tab-pix" onclick="selecionarPag('pix')">
-              <span>⚡</span>PIX
-            </div>
-            <div class="pag-tab" id="pag-tab-cartao" onclick="selecionarPag('cartao')">
-              <span>💳</span>Cartão
-            </div>
-          </div>
-
           <!-- PIX -->
-          <div class="pag-conteudo ativo" id="pag-pix">
+          <div id="pag-pix">
             <div class="pix-box">
               <div class="pix-valor" id="pix-valor">R$ 16,99</div>
               <div class="pix-descricao">Pague via PIX — aprovação imediata</div>
@@ -2166,8 +2157,8 @@
                 <div id="pix-qrcode" style="width:180px; height:180px; margin:0 auto 16px; background:#fff; border-radius:10px; padding:10px;"></div>
                 <div class="pix-chave-box">
                   <span class="pix-chave-valor" id="pix-chave" style="font-size:0.75rem; word-break:break-all;"></span>
-                  <button class="btn-copiar" id="btn-copiar" onclick="copiarPix()">Copiar</button>
                 </div>
+                <button class="btn-copiar" id="btn-copiar" onclick="copiarPix()" style="width:100%; padding:14px; font-size:1rem; margin-top:10px; border-radius:10px; letter-spacing:0.5px;">📋 PIX Copia e Cola</button>
                 <ul class="pix-instrucoes">
                   <li>1. Copie o código acima ou escaneie o QR</li>
                   <li>2. Abra o app do seu banco → PIX</li>
@@ -2185,41 +2176,8 @@
             </div>
           </div>
 
-          <!-- CARTÃO -->
-          <div class="pag-conteudo" id="pag-cartao">
-            <div class="cartao-box">
-              <div class="form-grupo">
-                <label>Número do cartão <span class="obrig">*</span></label>
-                <input type="text" class="form-input" placeholder="0000 0000 0000 0000" inputmode="numeric" maxlength="19" />
-              </div>
-              <div class="form-grupo">
-                <label>Nome no cartão <span class="obrig">*</span></label>
-                <input type="text" class="form-input" placeholder="JOAO DA SILVA" />
-              </div>
-              <div class="card-row">
-                <div class="form-grupo">
-                  <label>Validade <span class="obrig">*</span></label>
-                  <input type="text" class="form-input" placeholder="MM/AA" maxlength="5" inputmode="numeric" />
-                </div>
-                <div class="form-grupo">
-                  <label>CVV <span class="obrig">*</span></label>
-                  <input type="text" class="form-input" placeholder="123" maxlength="4" inputmode="numeric" />
-                </div>
-              </div>
-              <div class="form-grupo">
-                <label>Parcelamento</label>
-                <select class="form-input">
-                  <option>1x de R$ 16,99 sem juros (2 un)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
           <div class="ck-nav">
             <button class="btn-voltar" onclick="irParaEtapa(2); document.getElementById('ck-titulo-label').textContent='Dados de entrega';">&larr; Voltar</button>
-            <button class="btn-avancar" onclick="finalizarPedido()">
-              CONFIRMAR PEDIDO ✓
-            </button>
           </div>
         </div>
 
@@ -2360,6 +2318,7 @@
       }
       irParaEtapa(3);
       renderPagamento();
+      finalizarPedido();
     }
 
     // ── CEP via ViaCEP ──
@@ -2384,16 +2343,7 @@
     }
 
     // ── Pagamento ──
-    var pagAtual    = 'pix';
     var pixCopyText = '';
-
-    function selecionarPag(tipo) {
-      pagAtual = tipo;
-      ['pix','cartao'].forEach(function(t) {
-        document.getElementById('pag-tab-' + t).classList.toggle('ativo', t === tipo);
-        document.getElementById('pag-' + t).classList.toggle('ativo', t === tipo);
-      });
-    }
 
     function renderPagamento() {
       var k = KITS[kitAtual];
@@ -2401,7 +2351,7 @@
       ['pix-aguardando','pix-carregando','pix-gerado','pix-erro'].forEach(function(id) {
         document.getElementById(id).style.display = 'none';
       });
-      document.getElementById('pix-aguardando').style.display = 'block';
+      document.getElementById('pix-carregando').style.display = 'block';
     }
 
     function copiarPix() {
@@ -2409,21 +2359,22 @@
       var btn = document.getElementById('btn-copiar');
       if (navigator.clipboard) {
         navigator.clipboard.writeText(pixCopyText).then(function() {
-          btn.textContent = 'Copiado!'; btn.classList.add('copiado');
-          setTimeout(function(){ btn.textContent = 'Copiar'; btn.classList.remove('copiado'); }, 2500);
+          btn.textContent = '✅ Código copiado!'; btn.classList.add('copiado');
+          setTimeout(function(){ btn.textContent = '📋 PIX Copia e Cola'; btn.classList.remove('copiado'); }, 2500);
         });
       } else {
         var ta = document.createElement('textarea');
         ta.value = pixCopyText; document.body.appendChild(ta); ta.select();
         document.execCommand('copy'); document.body.removeChild(ta);
-        btn.textContent = 'Copiado!';
-        setTimeout(function(){ btn.textContent = 'Copiar'; }, 2500);
+        btn.textContent = '✅ Código copiado!';
+        setTimeout(function(){ btn.textContent = '📋 PIX Copia e Cola'; }, 2500);
       }
     }
 
     function tentarNovamente() {
       document.getElementById('pix-erro').style.display = 'none';
-      document.getElementById('pix-aguardando').style.display = 'block';
+      document.getElementById('pix-carregando').style.display = 'block';
+      finalizarPedido();
     }
 
     // ── Finalizar pedido — chama backend Dice ──
@@ -2431,57 +2382,44 @@
       var k     = KITS[kitAtual];
       var total = k.preco + FRETE;
 
-      if (pagAtual === 'pix') {
-        ['pix-aguardando','pix-gerado','pix-erro'].forEach(function(id){
-          document.getElementById(id).style.display = 'none';
-        });
-        document.getElementById('pix-carregando').style.display = 'block';
+      ['pix-aguardando','pix-gerado','pix-erro'].forEach(function(id){
+        document.getElementById(id).style.display = 'none';
+      });
+      document.getElementById('pix-carregando').style.display = 'block';
 
-        var btnFin = document.querySelector('#ck-etapa3 .btn-avancar');
-        if (btnFin) { btnFin.disabled = true; btnFin.textContent = 'Aguarde…'; }
-
-        fetch('/api/criar-pagamento', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            nome:      document.getElementById('f-nome').value,
-            email:     document.getElementById('f-email').value,
-            cpf:       document.getElementById('f-cpf').value,
-            tel:       document.getElementById('f-tel').value,
-            kit_label: k.label,
-            total:     total
-          })
+      fetch('/api/criar-pagamento', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome:      document.getElementById('f-nome').value,
+          email:     document.getElementById('f-email').value,
+          cpf:       document.getElementById('f-cpf').value,
+          tel:       document.getElementById('f-tel').value,
+          kit_label: k.label,
+          total:     total
         })
-        .then(function(r){ return r.json(); })
-        .then(function(data) {
-          document.getElementById('pix-carregando').style.display = 'none';
-          if (btnFin) { btnFin.disabled = false; btnFin.textContent = 'CONFIRMAR PEDIDO ✓'; }
-          if (!data.ok) throw new Error(data.erro || 'Erro ao gerar PIX.');
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        document.getElementById('pix-carregando').style.display = 'none';
+        if (!data.ok) throw new Error(data.erro || 'Erro ao gerar PIX.');
 
-          pixCopyText = data.qr_code_text;
-          var qrEl = document.getElementById('pix-qrcode');
-          qrEl.innerHTML = '';
-          new QRCode(qrEl, {
-            text: data.qr_code_text,
-            width: 160, height: 160,
-            colorDark: '#000000', colorLight: '#ffffff'
-          });
-          document.getElementById('pix-chave').textContent = data.qr_code_text;
-          document.getElementById('pix-gerado').style.display = 'block';
-        })
-        .catch(function(err) {
-          document.getElementById('pix-carregando').style.display = 'none';
-          document.getElementById('pix-erro-msg').textContent = err.message || 'Erro ao gerar PIX. Tente novamente.';
-          document.getElementById('pix-erro').style.display = 'block';
-          if (btnFin) { btnFin.disabled = false; btnFin.textContent = 'CONFIRMAR PEDIDO ✓'; }
+        pixCopyText = data.qr_code_text;
+        var qrEl = document.getElementById('pix-qrcode');
+        qrEl.innerHTML = '';
+        new QRCode(qrEl, {
+          text: data.qr_code_text,
+          width: 160, height: 160,
+          colorDark: '#000000', colorLight: '#ffffff'
         });
-
-      } else {
-        irParaEtapa(4);
-        document.getElementById('ck-titulo-label').textContent   = 'Pedido recebido';
-        document.getElementById('sucesso-msg-pix').style.display    = 'none';
-        document.getElementById('sucesso-msg-cartao').style.display = 'block';
-      }
+        document.getElementById('pix-chave').textContent = data.qr_code_text;
+        document.getElementById('pix-gerado').style.display = 'block';
+      })
+      .catch(function(err) {
+        document.getElementById('pix-carregando').style.display = 'none';
+        document.getElementById('pix-erro-msg').textContent = err.message || 'Erro ao gerar PIX. Tente novamente.';
+        document.getElementById('pix-erro').style.display = 'block';
+      });
     }
 
     // ════════════════════════════════
