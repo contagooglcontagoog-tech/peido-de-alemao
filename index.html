@@ -11,6 +11,21 @@
   <meta property="og:type" content="product" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+  <!-- Facebook Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1350679366463627');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1350679366463627&ev=PageView&noscript=1"/></noscript>
+
   <style>
     :root {
       --laranja: #e65c00;
@@ -2039,7 +2054,7 @@
           </div>
 
           <div class="ck-nav" style="border-top:none; padding-top:0;">
-            <button class="btn-avancar" onclick="irParaEtapa(2); document.getElementById('ck-titulo-label').textContent='Dados de entrega';">
+            <button class="btn-avancar" onclick="avancarEtapa1();">
               CONTINUAR &rarr;
             </button>
           </div>
@@ -2227,6 +2242,21 @@
     var kitAtual = 2;
     var etapaAtual = 1;
 
+    // ── Facebook Pixel helpers ──
+    function _fbUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0;
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+    }
+    function _fbCookie(n) {
+      var v = document.cookie.match('(^|;) ?' + n + '=([^;]*)(;|$)');
+      return v ? v[2] : '';
+    }
+    function _fbTrack(event, params, extra) {
+      if (typeof fbq !== 'undefined') fbq('track', event, params, extra);
+    }
+
     function selecionarKit(n) {
       kitAtual = n;
       document.querySelectorAll('.kit-opcao').forEach(function(el) { el.classList.remove('selecionado'); });
@@ -2249,11 +2279,35 @@
       renderSteps();
       document.getElementById('ck-overlay').classList.add('aberto');
       document.body.style.overflow = 'hidden';
+
+      var k = KITS[kitAtual];
+      _fbTrack('AddToCart', {
+        content_ids:  ['peido-alemao-kit-' + kitAtual],
+        content_name: 'Peido Alemão — ' + k.label,
+        content_type: 'product',
+        value:        k.preco,
+        currency:     'BRL',
+        num_items:    k.qtd
+      });
     }
 
     function fecharCarrinho() {
       document.getElementById('ck-overlay').classList.remove('aberto');
       document.body.style.overflow = '';
+    }
+
+    function avancarEtapa1() {
+      irParaEtapa(2);
+      document.getElementById('ck-titulo-label').textContent = 'Dados de entrega';
+      var k = KITS[kitAtual];
+      _fbTrack('InitiateCheckout', {
+        content_ids:  ['peido-alemao-kit-' + kitAtual],
+        content_name: 'Peido Alemão — ' + k.label,
+        content_type: 'product',
+        value:        k.preco + FRETE,
+        currency:     'BRL',
+        num_items:    k.qtd
+      });
     }
 
     var FRETE = 7.00;
@@ -2379,24 +2433,42 @@
 
     // ── Finalizar pedido — chama backend Dice ──
     function finalizarPedido() {
-      var k     = KITS[kitAtual];
-      var total = k.preco + FRETE;
+      var k            = KITS[kitAtual];
+      var total        = k.preco + FRETE;
+      var purchaseEvId = _fbUUID();
 
       ['pix-aguardando','pix-gerado','pix-erro'].forEach(function(id){
         document.getElementById(id).style.display = 'none';
       });
       document.getElementById('pix-carregando').style.display = 'block';
 
+      // FB: Purchase browser-side (dedup via eventID com CAPI)
+      _fbTrack('Purchase', {
+        value:        total,
+        currency:     'BRL',
+        content_ids:  ['peido-alemao-kit-' + kitAtual],
+        content_name: 'Peido Alemão — ' + k.label,
+        content_type: 'product',
+        num_items:    k.qtd
+      }, { eventID: purchaseEvId });
+
       fetch('/api/criar-pagamento', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          nome:      document.getElementById('f-nome').value,
-          email:     document.getElementById('f-email').value,
-          cpf:       document.getElementById('f-cpf').value,
-          tel:       document.getElementById('f-tel').value,
-          kit_label: k.label,
-          total:     total
+          nome:               document.getElementById('f-nome').value,
+          email:              document.getElementById('f-email').value,
+          cpf:                document.getElementById('f-cpf').value,
+          tel:                document.getElementById('f-tel').value,
+          kit_label:          k.label,
+          kit_id:             kitAtual,
+          kit_qtd:            k.qtd,
+          total:              total,
+          fb_event_id:        purchaseEvId,
+          fb_fbc:             _fbCookie('_fbc'),
+          fb_fbp:             _fbCookie('_fbp'),
+          fb_event_source_url: window.location.href,
+          fb_user_agent:      navigator.userAgent
         })
       })
       .then(function(r){ return r.json(); })
