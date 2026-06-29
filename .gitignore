@@ -1,3 +1,6 @@
 videos/ssstik.io_@leoosilvah__1782745914921.mp4
 backend/.env
 backend/node_modules/
+node_modules/
+.env
+.vercel
