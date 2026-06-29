@@ -2154,7 +2154,7 @@
 
               <!-- Estado: QR gerado -->
               <div id="pix-gerado" style="display:none;">
-                <div id="pix-qrcode" style="width:180px; height:180px; margin:0 auto 16px; background:#fff; border-radius:10px; padding:10px;"></div>
+                <div id="pix-qrcode" style="width:220px; height:220px; margin:0 auto 16px; background:#fff; border-radius:10px; padding:10px;"></div>
                 <div class="pix-chave-box">
                   <span class="pix-chave-valor" id="pix-chave" style="font-size:0.75rem; word-break:break-all;"></span>
                 </div>
@@ -2408,9 +2408,12 @@
         var qrEl = document.getElementById('pix-qrcode');
         qrEl.innerHTML = '';
         new QRCode(qrEl, {
-          text: data.qr_code_text,
-          width: 160, height: 160,
-          colorDark: '#000000', colorLight: '#ffffff'
+          text:         data.qr_code_text,
+          width:        200,
+          height:       200,
+          colorDark:    '#000000',
+          colorLight:   '#ffffff',
+          correctLevel: QRCode.CorrectLevel.L
         });
         document.getElementById('pix-chave').textContent = data.qr_code_text;
         document.getElementById('pix-gerado').style.display = 'block';
